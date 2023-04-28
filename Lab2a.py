@@ -1,6 +1,6 @@
 
 def display_main_menu():
-    print("Enter some numbers separated by space (e.g. 5 67 32)")
+    print("Enter some numbers separated by commas (e.g. 5 67 32)")
 display_main_menu()
 
 def get_user_input(str_list):
@@ -12,7 +12,7 @@ def get_user_input(str_list):
             print(f"Skipping non-numeric value: {string}")
     return float_list
 print("Enter your numbers: ")
-string_list = input().split() # Splitting the input string into a list of strings
+string_list = input().split(',') # Splitting the input string into a list of strings
 float_list = get_user_input(string_list)
 print(float_list)
 
