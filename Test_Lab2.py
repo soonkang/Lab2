@@ -1,25 +1,20 @@
-import Lab2.Lab2a as temperature
-def find_min_max(float_list):
-    float(float_list)
-    float_list= input()
-    minimum=min(float_list)
-    maximun=max(float_list)
-    print("The minimum value is:", minimum)
-    print("The maximum value is:", maximun)
+import pytest
+from Lab2a import find_min_max, calc_median_temperature, calc_average
 
-def calc_average(float_list):
-    total = sum(float_list)
-    count = len(float_list)
-    average = total / count
-    print("The average is:", average)
+# Test for find_min_max() function
+def test_find_min_max():
+    assert find_min_max([1, 2, 3, 4, 5]) == (1, 5)
+    assert find_min_max([10, 2, 3, 4, 1]) == (1, 10)
+    assert find_min_max([0]) == (0, 0)
 
+# Test for calc_average() function
+def test_calc_average():
+    assert calc_average([1, 2, 3, 4, 5]) == 3.0
+    assert calc_average([10, 20, 30, 40, 50]) == 30.0
+    assert calc_average([0]) == 0.0
 
-def calc_median_temperature(sorted_list):
-    list_length = len(sorted_list)
-    middle_index = list_length // 2
-    if list_length % 2 == 0:
-        median = (sorted_list[middle_index-1] + sorted_list[middle_index ]) / 2
-    else:
-        median = sorted_list[middle_index]
-    print("The median is:", median)
-
+# Test for calc_median_temperature() function
+def test_calc_median_temperature():
+    assert calc_median_temperature([1, 2, 3, 4, 5]) == 3.0
+    assert calc_median_temperature([10, 20, 30, 40, 50, 60]) == 35.0
+    assert calc_median_temperature([0]) == 0.0
