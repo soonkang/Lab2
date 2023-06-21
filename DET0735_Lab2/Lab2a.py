@@ -47,3 +47,4 @@ def calc_median_temperature(sorted_list):
     print("The median is:", median)
 
 calc_median_temperature(sorted_list)
+
